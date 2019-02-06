@@ -12,10 +12,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
+
 
 
 public class AmazonTest extends StartAppiumServer {
@@ -43,14 +43,14 @@ public class AmazonTest extends StartAppiumServer {
 
     }
 
-    @Test(description = "Check the amzon home icon present on amzon sign in page")
+    @Test( priority = 1,description = "Check the amzon home icon present on amzon sign in page")
     public void checkAmazonIcone() {
         boolean amazonIcon = appiumDriver.findElement(By.id("sso_splash_logo")).isDisplayed();
         Assert.assertTrue(amazonIcon);
 
     }
 
-    @Test(description = "Check the Amazon sign in page primary title")
+    @Test(priority = 2,description = "Check the Amazon sign in page primary title")
     public void amazonSigninPagePrimaryTitle() {
         String pageText1 = appiumDriver.findElement(By.id("signin_to_yourAccount")).getText();
         Assert.assertEquals(pageText1, "Sign in to your account");
@@ -66,7 +66,7 @@ public class AmazonTest extends StartAppiumServer {
 
     }
 
-    @Test(description = "Check the Amazon sign in page secondarys title")
+    @Test(priority = 3,description = "Check the Amazon sign in page secondarys title")
     public void amazonSigninPageSecondarysTitle() {
 
         String pageText2 = appiumDriver.findElement(By.id("view_your_wish_list")).getText();
@@ -81,7 +81,7 @@ public class AmazonTest extends StartAppiumServer {
     }
 
 
-    @Test(description = "Check sign in the button present on Amazon sign in page")
+    @Test(priority = 4,description = "Check sign in the button present on Amazon sign in page")
     public void checkSignInBtn() {
         WebElement signInBtn = appiumDriver.findElement(By.id("sign_in_button"));
         if (signInBtn.isDisplayed() && signInBtn.isEnabled())
@@ -94,7 +94,7 @@ public class AmazonTest extends StartAppiumServer {
     }
 
 
-    @Test(description = "Check sign up the button present on Amazon sign in page")
+    @Test(priority = 5,description = "Check sign up the button present on Amazon sign in page")
     public void checkSignUpBtn() {
         WebElement signUpBtn = appiumDriver.findElement(By.id("new_user"));
         if (signUpBtn.isDisplayed() && signUpBtn.isEnabled()) {
@@ -105,7 +105,7 @@ public class AmazonTest extends StartAppiumServer {
     }
 
 
-    @Test(description = "Check skip sign in button on amazon sign in page")
+    @Test(priority = 6,description = "Check skip sign in button on amazon sign in page")
     public void checkSkipSignIpBtn() {
         WebElement skipSignInpBtn = appiumDriver.findElement(By.id("skip_sign_in_button"));
         if (skipSignInpBtn.isDisplayed() && skipSignInpBtn.isEnabled()) {
@@ -116,14 +116,17 @@ public class AmazonTest extends StartAppiumServer {
     }
 
 
-    @Test(enabled = true, description = "login with Valid UserName and Valid Password")
-    public void loginToAmazon() {
+    @Test(priority = 8, enabled = false,description = "login with Valid UserName and Valid Password")
+    public void loginToAmazon() throws InterruptedException {
         appiumDriver.findElement(By.id("sign_in_button")).click();
         String currentview = appiumDriver.getContext();
 
         if (currentview.equalsIgnoreCase("NATIVE_APP")) {
-            appiumDriver.findElement(By.id("ap_email_login")).sendKeys("akashgupta.gupta16@gmail.com");
+            WebElement loginUser = appiumDriver.findElement(By.id("ap_email_login"));
+           loginUser.sendKeys("7879556515");
             appiumDriver.findElement(By.id("continue")).click();
+            loginUser.clear();
+            appiumDriver.findElement(By.id("ap_email_login")).sendKeys("7879556515");
             appiumDriver.findElement(By.id("ap_password")).sendKeys("akash@787");
             appiumDriver.findElement(By.id("signInSubmit")).click();
         } else {
@@ -131,13 +134,13 @@ public class AmazonTest extends StartAppiumServer {
         }
     }
 
-    @Test(enabled = false, description = "search product without signup")
+    @Test(priority = 7,enabled = true, description = "search product without signup")
     public void searchProductWithoutSignIn() throws InterruptedException {
         appiumDriver.findElement(By.id("skip_sign_in_button")).click();
         appiumDriver.findElement(By.id("rs_search_src_text")).click();
-        Thread.sleep(2000);
+
         appiumDriver.findElement(By.id("rs_search_src_text")).sendKeys("mobile");
-        Thread.sleep(2000);
+
         appiumDriver.findElement(By.id("iss_search_dropdown_item_text")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("item_title")));
         boolean searchresultpage = appiumDriver.findElement(By.id("item_title")).isDisplayed();
@@ -146,19 +149,17 @@ public class AmazonTest extends StartAppiumServer {
 
     }
 
-    @Test(description = "search the product")
+    @Test(priority = 8,description = "search the product")
     public void checkSearchProduct() throws InterruptedException {
         appiumDriver.findElement(By.id("rs_search_src_text")).click();
-        Thread.sleep(2000);
         appiumDriver.findElement(By.id("rs_search_src_text")).sendKeys("mobile");
-        Thread.sleep(2000);
         appiumDriver.findElement(By.id("iss_search_dropdown_item_text")).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("item_title")));
         boolean searchresultpage = appiumDriver.findElement(By.id("item_title")).isDisplayed();
         Assert.assertTrue(searchresultpage);
     }
 
-    @Test
+    @Test(priority = 9, description = "check action bar is clickable or  not")
     public void checkAction_bar() {
         appiumDriver.findElement(By.id("action_bar_burger_icon")).click();
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.id("drawer_item_title")));
