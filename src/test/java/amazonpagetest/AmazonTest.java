@@ -116,17 +116,22 @@ public class AmazonTest extends StartAppiumServer {
     }
 
 
-    @Test(priority = 8, enabled = false,description = "login with Valid UserName and Valid Password")
+    @Test(priority = 7, enabled = true,description = "login with Valid UserName and Valid Password")
     public void loginToAmazon() throws InterruptedException {
         appiumDriver.findElement(By.id("sign_in_button")).click();
         String currentview = appiumDriver.getContext();
 
         if (currentview.equalsIgnoreCase("NATIVE_APP")) {
             WebElement loginUser = appiumDriver.findElement(By.id("ap_email_login"));
-           loginUser.sendKeys("7879556515");
+           loginUser.sendKeys("akashgupta.gupta16@gmail.com");
             appiumDriver.findElement(By.id("continue")).click();
-            loginUser.clear();
-            appiumDriver.findElement(By.id("ap_email_login")).sendKeys("7879556515");
+            WebElement loginHeader = appiumDriver.findElement(By.id("login_accordion_header"));
+            if(loginHeader.isDisplayed())
+            {
+                loginUser.clear();
+                appiumDriver.findElement(By.id("ap_email_login")).sendKeys("akashgupta.gupta16@gmail.com");
+                appiumDriver.findElement(By.id("continue")).click();
+            }
             appiumDriver.findElement(By.id("ap_password")).sendKeys("akash@787");
             appiumDriver.findElement(By.id("signInSubmit")).click();
         } else {
@@ -134,7 +139,7 @@ public class AmazonTest extends StartAppiumServer {
         }
     }
 
-    @Test(priority = 7,enabled = true, description = "search product without signup")
+    @Test(priority = 7,enabled = false, description = "search product without signup")
     public void searchProductWithoutSignIn() throws InterruptedException {
         appiumDriver.findElement(By.id("skip_sign_in_button")).click();
         appiumDriver.findElement(By.id("rs_search_src_text")).click();
