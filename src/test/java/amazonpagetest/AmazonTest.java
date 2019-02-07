@@ -123,17 +123,26 @@ public class AmazonTest extends StartAppiumServer {
 
         if (currentview.equalsIgnoreCase("NATIVE_APP")) {
             WebElement loginUser = appiumDriver.findElement(By.id("ap_email_login"));
-           loginUser.sendKeys("akashgupta.gupta16@gmail.com");
+            loginUser.sendKeys("akashgupta.gupta16@gmail.com");
             appiumDriver.findElement(By.id("continue")).click();
-            WebElement loginHeader = appiumDriver.findElement(By.id("login_accordion_header"));
-            if(loginHeader.isDisplayed())
+            try
             {
-                loginUser.clear();
-                appiumDriver.findElement(By.id("ap_email_login")).sendKeys("akashgupta.gupta16@gmail.com");
-                appiumDriver.findElement(By.id("continue")).click();
+                WebElement errorMessage = appiumDriver.findElement(By.id("auth-error-message-box"));
+                if(errorMessage.isDisplayed())
+                {
+                    loginUser.clear();
+                    appiumDriver.findElement(By.id("ap_email_login")).sendKeys("akashgupta.gupta16@gmail.com");
+                    appiumDriver.findElement(By.id("continue")).click();
+                }
+
             }
-            appiumDriver.findElement(By.id("ap_password")).sendKeys("akash@787");
-            appiumDriver.findElement(By.id("signInSubmit")).click();
+            catch (Exception e)
+            {
+                appiumDriver.findElement(By.id("ap_password")).sendKeys("akash@787");
+                appiumDriver.findElement(By.id("signInSubmit")).click();
+            }
+
+
         } else {
             System.out.println("web view is display");
         }
