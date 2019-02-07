@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="amazonpagetest.AmazonTest" tests="9" skipped="9" failures="0" errors="0" timestamp="2019-02-06T13:02:58" hostname="in-Akashgupta.local" time="0.004">
+  <properties/>
+  <testcase name="checkAmazonIcone" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="amazonSigninPagePrimaryTitle" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="amazonSigninPageSecondarysTitle" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="checkSignInBtn" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="checkSignUpBtn" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="checkSkipSignIpBtn" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="loginToAmazon" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="checkSearchProduct" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <testcase name="checkAction_bar" classname="amazonpagetest.AmazonTest" time="0.0">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
