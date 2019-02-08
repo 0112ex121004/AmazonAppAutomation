@@ -1,4 +1,5 @@
 package com.amazon.androidframework.pages.base;
+
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -7,25 +8,23 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class AndroidBasePage
-{
+public class AndroidBasePage {
     public AppiumDriver appiumDriver;
     WebDriverWait wait;
 
     public AndroidBasePage(AppiumDriver appiumDriver) {
-        this.appiumDriver=appiumDriver;
-        wait=new WebDriverWait(appiumDriver,20);
+        this.appiumDriver = appiumDriver;
+        wait = new WebDriverWait(appiumDriver, 20);
         init();
     }
 
     public void init() {
-        PageFactory.initElements(this.appiumDriver,this);
+        PageFactory.initElements(this.appiumDriver, this);
     }
 
     public void waitVisibilityOf(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-
 
 
     public void waitElementToBeClickable(WebElement element) {

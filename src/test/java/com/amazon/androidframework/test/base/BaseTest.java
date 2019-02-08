@@ -1,10 +1,15 @@
 package com.amazon.androidframework.test.base;
 
-import amazonpagetest.AndroidDriverBuilder;
+import com.amazon.androidframework.test.builder.AndroidDriverBuilder;
 import io.appium.java_client.AppiumDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 
 import java.io.IOException;
+
+import static com.amazon.androidframework.AppiumServerUtil.start;
+import static com.amazon.androidframework.AppiumServerUtil.stop;
 
 public class BaseTest extends AndroidDriverBuilder {
 
@@ -17,11 +22,10 @@ public class BaseTest extends AndroidDriverBuilder {
         start();
     }
 
-    @BeforeClass(description = "Setting Capabilities")
+    @BeforeMethod(description = "Setting Capabilities")
     public AppiumDriver setUpAppiumdDriver() throws IOException {
         System.out.println("before class");
         this.appiumDriver = setUp();
-
         return this.appiumDriver;
 
 
