@@ -1,4 +1,4 @@
-package com.amazon.androidframework.test;
+package com.amazon.androidframework;
 
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
