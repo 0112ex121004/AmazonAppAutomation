@@ -1,0 +1,26 @@
+stages:
+  -build
+  -cleanup_build
+  -test
+  -deploy
+
+  .project_tags: &project_tag
+    tags:
+      - optimus_cloud
+
+  before_script: - chmod +x gradlew
+
+  build_job:
+    stage: build
+    <<: *project_tag
+    script: ./gradlew clean build
+    allow_failure: false
+
+  cleanup_build_job:
+    stage: cleanup_build
+    <<: *project_tag
+    script: gradle clean build
+    when: on_failure
+
+
+
