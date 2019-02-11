@@ -16,7 +16,7 @@ public class BaseTest extends AndroidDriverBuilder {
     public AppiumDriver appiumDriver;
 
 
-    @BeforeTest
+   @BeforeTest
     public void startAppiumServer() {
         System.out.println("before test");
         start();
@@ -32,7 +32,7 @@ public class BaseTest extends AndroidDriverBuilder {
     }
 
 
-    @AfterTest
+   @AfterTest
     public void tearDown() {
         stop();
     }

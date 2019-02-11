@@ -17,7 +17,7 @@ public class AndroidDriverBuilder {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "2a2d916");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("appium version", "6.1");
+        capabilities.setCapability("appium version", "10.1.1");
         capabilities.setCapability("automationName", "UiAutomator");
         //capabilities.setCapability("app", "/Users/akash.gupta/Downloads/amazonandroidframeWork/app/Amazon.apk");
         capabilities.setCapability("appPackage", "in.amazon.mShop.android.shopping");

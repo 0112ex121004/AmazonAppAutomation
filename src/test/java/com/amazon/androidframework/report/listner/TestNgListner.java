@@ -37,23 +37,23 @@ public class TestNgListner implements ITestListener {
 
     @Override
     public void onTestFailure(ITestResult result) {
-        String failureImageFileName = "";
-        if (!result.isSuccess()) {
-            File imageFile = ((TakesScreenshot) AndroidDriverBuilder.appiumDriver).getScreenshotAs(OutputType.FILE);
-            failureImageFileName = result.getMethod().getMethodName()
-                    + new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + ".png";
-            File failureImageFile = new File("./screenshot/" + failureImageFileName);
-            try {
-                FileUtils.copyFile(imageFile, failureImageFile);
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-
-        System.out.println("Test case Fail and detail are" + result.getName());
-        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
-                ExtentTestManager.getTest().addScreenCapture(failureImageFileName));
+//        String failureImageFileName = "";
+//        if (!result.isSuccess()) {
+//            File imageFile = ((TakesScreenshot) AndroidDriverBuilder.appiumDriver).getScreenshotAs(OutputType.FILE);
+//            failureImageFileName = result.getMethod().getMethodName()
+//                    + new SimpleDateFormat("MM-dd-yyyy_HH-ss").format(new GregorianCalendar().getTime()) + ".png";
+//            File failureImageFile = new File("./screenshot/" + failureImageFileName);
+//            try {
+//                FileUtils.copyFile(imageFile, failureImageFile);
+//            } catch (IOException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        System.out.println("Test case Fail and detail are" + result.getName());
+//        ExtentTestManager.getTest().log(LogStatus.FAIL, "Test Failed",
+//                ExtentTestManager.getTest().addScreenCapture(failureImageFileName));
 
     }
 
