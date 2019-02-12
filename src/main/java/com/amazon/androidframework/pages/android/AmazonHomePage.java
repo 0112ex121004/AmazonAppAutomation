@@ -51,8 +51,6 @@ public class AmazonHomePage extends AndroidBasePage {
     private WebElement offersBtn;
 
 
-
-
     public AmazonHomePage(AppiumDriver appiumDriver) {
         super(appiumDriver);
     }
@@ -105,6 +103,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isGroceryTextDisplay() {
         try {
             waitVisibilityOf(groceryTextBtn);
@@ -113,7 +112,8 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
-    public boolean isFashionTextDisplay () {
+
+    public boolean isFashionTextDisplay() {
         try {
             waitVisibilityOf(fashionTextBtn);
             return true;
@@ -121,6 +121,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isMobilesTextDisplay() {
         try {
             waitVisibilityOf(mobilesTextBtn);
@@ -129,6 +130,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isAmazonPayBtmnDisplay() {
         try {
             waitVisibilityOf(amazonPayBtn);
@@ -137,6 +139,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isScanTextDisplay() {
         try {
             waitVisibilityOf(scanBtn);
@@ -145,6 +148,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isRechargesBtnDisplay() {
         try {
             waitVisibilityOf(rechargesBtn);
@@ -153,6 +157,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isPayBillsDisplay() {
         try {
             waitVisibilityOf(payBillsBtn);
@@ -161,6 +166,7 @@ public class AmazonHomePage extends AndroidBasePage {
             return false;
         }
     }
+
     public boolean isOffersBtnDisplay() {
         try {
             waitVisibilityOf(offersBtn);

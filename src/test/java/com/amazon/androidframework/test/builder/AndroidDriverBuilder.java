@@ -17,17 +17,15 @@ public class AndroidDriverBuilder {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "2a2d916");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("appium version", "10.1.1");
         capabilities.setCapability("automationName", "UiAutomator");
-        //capabilities.setCapability("app", "/Users/akash.gupta/Downloads/amazonandroidframeWork/app/Amazon.apk");
         capabilities.setCapability("appPackage", "in.amazon.mShop.android.shopping");
         capabilities.setCapability("appActivity", "com.amazon.mShop.home.HomeActivity");
         //capabilities.setCapability(MobileCapabilityType.NO_RESET, "true");
 
         appiumDriver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         appiumDriver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
         return appiumDriver;
+
 
     }
 }

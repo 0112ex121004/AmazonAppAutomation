@@ -2,19 +2,10 @@ package com.amazon.androidframework.report.listner;
 
 import com.amazon.androidframework.report.ExtentManager;
 import com.amazon.androidframework.report.ExtentTestManager;
-import com.amazon.androidframework.test.builder.AndroidDriverBuilder;
 import com.relevantcodes.extentreports.LogStatus;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
 
 public class TestNgListner implements ITestListener {
 

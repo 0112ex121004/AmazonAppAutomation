@@ -55,8 +55,8 @@ public class AmazonLoginTest2 extends BaseTest {
     }
 
 
-    @Test(priority = 7, enabled = true, description = "login with Valid UserName and Valid Password")
-    public void loginToAmazon() throws InterruptedException {
+    @Test(priority = 7, description = "login with Valid UserName and Valid Password")
+    public void loginToAmazon() {
 
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
         lgPage.login("akashgupta.gupta16@gmail.com", "akash@787");

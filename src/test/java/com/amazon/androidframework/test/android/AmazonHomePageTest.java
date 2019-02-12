@@ -8,21 +8,21 @@ import org.testng.annotations.Test;
 
 public class AmazonHomePageTest extends BaseTest {
 
-    @Test(priority = 7, enabled = true, description = "search product without signup")
-    public void searchProductWithoutSignIn() throws InterruptedException {
+    @Test(priority = 7, description = "search product without signup")
+    public void searchProductWithoutSignIn() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        ahome.searchProduct("mobile");
-        ahome.isSearchProductPresent();
+        aHome.searchProduct("mobile");
+        aHome.isSearchProductPresent();
     }
 
     @Test(priority = 8, description = "search the product")
     public void checkSearchProduct() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.login("akashgupta.gupta16@gmail.com", "akash@787");
-        ahome.searchProduct("mobile");
-        ahome.isSearchProductPresent();
+        AmazonHomePage aHome = lgPage.login("akashgupta.gupta16@gmail.com", "akash@787");
+        aHome.searchProduct("mobile");
+        aHome.isSearchProductPresent();
 
 
     }
@@ -30,56 +30,59 @@ public class AmazonHomePageTest extends BaseTest {
     @Test(priority = 9, description = "check action bar is clickable or  not")
     public void checkAction_bar() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.login("akashgupta.gupta16@gmail.com", "akash@787");
+        AmazonHomePage aHome = lgPage.login("akashgupta.gupta16@gmail.com", "akash@787");
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        ahome.isActionBarPresent();
+        aHome.isActionBarPresent();
     }
 
-    @Test(priority = 10,  description = "Chcek Amazon Pay display or not")
+    @Test(priority = 10, description = "Chcek Amazon Pay display or not")
     public void checkAmazonPay() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        Assert.assertTrue(ahome.isAmazonPayBtmnDisplay());
+        Assert.assertTrue(aHome.isAmazonPayBtmnDisplay());
 
     }
-    @Test(priority = 15,  description = "Chcek Add cart btn display or not")
-    public void checkAddCartIcon(){
+
+    @Test(priority = 15, description = "Chcek Add cart btn display or not")
+    public void checkAddCartIcon() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        Assert.assertTrue(ahome.isaddCartIconDisplay());
+        Assert.assertTrue(aHome.isaddCartIconDisplay());
     }
-    @Test(priority = 12,  description = "Chcek Offer text display or not")
-    public void checkOfferBtn(){
+
+    @Test(priority = 12, description = "Chcek Offer text display or not")
+    public void checkOfferBtn() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        Assert.assertTrue(ahome.isOffersBtnDisplay());
+        Assert.assertTrue(aHome.isOffersBtnDisplay());
     }
-    @Test(priority = 13,  description = "Chcek Pay Bill display or not")
-    public void checkPayBillDisplay(){
+
+    @Test(priority = 13, description = "Chcek Pay Bill display or not")
+    public void checkPayBillDisplay() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        Assert.assertTrue(ahome.isPayBillsDisplay());
+        Assert.assertTrue(aHome.isPayBillsDisplay());
     }
-    @Test(priority = 11,  description = "Chcek Recharge option display or not")
-    public void checkRechargeDisplay(){
+
+    @Test(priority = 11, description = "Chcek Recharge option display or not")
+    public void checkRechargeDisplay() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        Assert.assertTrue(ahome.isRechargesBtnDisplay());
+        Assert.assertTrue(aHome.isRechargesBtnDisplay());
     }
+
     @Test(priority = 14, description = "Chcek Scan icon display or not")
-    public void checkScanBtndisplay(){
+    public void checkScanBtndisplay() {
         AmazonLoginPage lgPage = new AmazonLoginPage(appiumDriver);
-        AmazonHomePage ahome = lgPage.clickOnSkipSignIn();
+        AmazonHomePage aHome = lgPage.clickOnSkipSignIn();
         Assert.assertTrue(lgPage.isAmazonHomePageIconDisplay());
-        Assert.assertTrue(ahome.isScanTextDisplay());
+        Assert.assertTrue(aHome.isScanTextDisplay());
     }
-
-
 
 
 }
